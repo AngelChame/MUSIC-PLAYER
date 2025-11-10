@@ -1,0 +1,17 @@
+@if (currentSong) {
+  <div class="now-playing">
+    <div class="cover-container">
+      <img [src]="currentSong.caratula" [alt]="currentSong.song_name" class="cover" />
+    </div>
+
+    <div class="song-info">
+      <h2 class="song-title">{{ currentSong.song_name }}</h2>
+      <p class="song-artist">{{ currentSong.artist_name }}</p>
+      <p class="song-duration">Duración: {{ currentSong.duration }}</p>
+    </div>
+  </div>
+} @else {
+  <div class="now-playing empty">
+    <p>No hay canción seleccionada</p>
+  </div>
+}

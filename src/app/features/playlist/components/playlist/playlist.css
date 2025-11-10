@@ -1,0 +1,93 @@
+/* Contenedor principal de la playlist */
+.container-playlist {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 10px;
+  background-color: #EFEFEF;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.container-playlist > ul {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cada canción */
+.container-playlist > ul > li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.container-playlist > ul > li:hover {
+  background-color: rgba(76, 66, 69, 0.29);
+  transform: translateX(3px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Imagen de la canción */
+.playlist-element__photo {
+  border-radius: 12px;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Info de la canción */
+.playlist-element__content-info {
+  margin-left: 18px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.playlist-element__title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist-element__autor {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Duración de la canción */
+.playlist-element__time {
+  font-size: 14px;
+  color: #4C4245;
+  min-width: 50px;
+  text-align: right;
+}
+
+/* Canción activa */
+li.active {
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+li.active .playlist-element__title,
+li.active .playlist-element__autor {
+  color: #a37e86;
+}

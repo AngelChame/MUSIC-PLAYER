@@ -1,0 +1,52 @@
+<section class="player-bar">
+  <div class="player-info">
+    <img [src]="currentSong?.caratula" alt="cover" class="cover" />
+    <div class="song-details">
+      <p class="title">{{ currentSong?.song_name }}</p>
+      <p class="artist">{{ currentSong?.artist_name }}</p>
+    </div>
+  </div>
+
+  <div class="player-controls">
+    <div class="buttons">
+      <button (click)="prevSong()">
+        <img src="assets/icons/Skip back.png" alt="Anterior" />
+      </button>
+
+      <button (click)="togglePlayPause()" class="play-btn">
+        @if (isPaused) {
+          <img src="assets/icons/Play.png" alt="Parar" />
+        } @else {
+          <img src="assets/icons/Bar chart-2.png" alt="Reanudar" />
+        }
+      </button>
+
+      <button (click)="nextSong()">
+        <img src="assets/icons/Skip forward.png" alt="Anterior" />
+      </button>
+    </div>
+
+    <input
+      #progressBar
+      type="range"
+      class="progress-bar"
+      [value]="progressValue"
+      min="0"
+      max="100"
+      (input)="onProgressChange($event)"
+    />
+  </div>
+
+  <div class="player-volume">
+    <img src="assets/icons/Volume 2.png" alt="Volumen" />
+    <input
+      #volumeSlider
+      type="range"
+      class="volume-slider"
+      [value]="volumePercentage"
+      min="0"
+      max="100"
+      (input)="onVolumeChange($event)"
+    />
+  </div>
+</section>
