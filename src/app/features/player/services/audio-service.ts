@@ -9,7 +9,6 @@ export interface Song {
   duration: string;
 }
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +21,7 @@ export class AudioService {
   private _currentIndex: number = 0;
   private _allSongs: Song[] = [];
 
-  // Observables para comunicación entre componentes
+  //comunicación entre componentes
   private currentSongSubject = new BehaviorSubject<Song | null>(null);
   private currentIndexSubject = new BehaviorSubject<number>(0);
   private playStateSubject = new BehaviorSubject<'playing' | 'paused'>('paused');
