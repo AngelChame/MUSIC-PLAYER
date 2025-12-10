@@ -25,7 +25,7 @@ searchQuery: string = '';
       if (this.searchQuery.trim() !== '') {
         this.onSearch();
       } else {
-        this.searchResults = []; // Limpia resultados si el campo está vacío
+        this.searchResults = [];
       }
     }, 400);
   }
